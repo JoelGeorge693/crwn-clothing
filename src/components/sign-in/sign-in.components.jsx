@@ -15,7 +15,7 @@ class SignIn extends React.Component {
   }
 
   handleSubmit = async (e) => {
-    e.preventDeafult();
+    e.preventDefault();
 
     const { email, password } = this.state;
 
@@ -25,8 +25,6 @@ class SignIn extends React.Component {
     } catch (err) {
       console.error(err);
     }
-
-    this.setState({ email: "", password: "" });
   };
 
   handleChange = (e) => {
@@ -65,7 +63,6 @@ class SignIn extends React.Component {
               onClick={signInWithGoogle}
               isGoogleSignIn
             >
-              {" "}
               Sign in with Google
             </CustomButton>
           </div>
