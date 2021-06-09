@@ -1,13 +1,15 @@
 import React from "react";
-import SignIn from "../../components/sign-in/sign-in.components.jsx";
-import SignUp from "../../components/sign-up/sign-up.components.jsx";
-import "./sign-in-and -sign-up.styles.scss";
 
-const SignInAndSignUp = () => (
-  <div className="sign-in-and-sign-up">
+import SignIn from "../../components/sign-in/sign-in.components";
+import SignUp from "../../components/sign-up/sign-up.components";
+
+import { SignInAndSignUpContainer } from "./sign-in-and -sign-up.styles";
+
+const SignInAndSignUpPage = () => (
+  <SignInAndSignUpContainer>
     <SignIn />
     <SignUp />
-  </div>
+  </SignInAndSignUpContainer>
 );
 
-export default SignInAndSignUp;
+export default SignInAndSignUpPage;
