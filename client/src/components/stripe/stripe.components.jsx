@@ -34,7 +34,7 @@ const StripeCheckoutButton = ({ price }) => {
       currency="INR"
       billingAddress
       shippingAddress
-      image="https://svgshare.com/i/CUz.svg"
+      image="https://sendeyo.com/up/d/f3eb2117da"
       description={`Your total is Rs.${price}`}
       amount={priceForStripe}
       panelLabel="Pay Now"

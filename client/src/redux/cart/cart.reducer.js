@@ -8,6 +8,11 @@ const INITIAL_STATE = {
 
 const cartReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case "persist/REHYDRATE":
+      return {
+        ...state,
+        cartItems: [],
+      };
     case cartActionTypes.TOGGLE_CART_HIDDEN:
       return {
         ...state,
@@ -34,6 +39,11 @@ const cartReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         cartItems: [],
+      };
+    case cartActionTypes.SET_CART_FROM_FIREBASE:
+      return {
+        ...state,
+        cartItems: action.payload,
       };
 
     default:
