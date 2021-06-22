@@ -7,10 +7,11 @@ import {
   selectCartItemTotal,
 } from "../../redux/cart/cart.selectors";
 import StripeCheckoutButton from "../../components/stripe/stripe.components";
+import hideSignInOption from "../../redux/sign-in-option/sign-in-option.actions";
 
 import "./checkout.styles.scss";
 
-const Checkout = ({ cartItems, total }) => (
+const Checkout = ({ cartItems, total, hideSignInOption }) => (
   <div className="checkout-page">
     <div className="checkout-header">
       <div className="header-block">
@@ -48,4 +49,8 @@ const mapStateToProps = createStructuredSelector({
   total: selectCartItemTotal,
 });
 
-export default connect(mapStateToProps)(Checkout);
+const mapDispatchToProps = (dispatch) => ({
+  hideSignInOption: () => dispatch(hideSignInOption()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Checkout);

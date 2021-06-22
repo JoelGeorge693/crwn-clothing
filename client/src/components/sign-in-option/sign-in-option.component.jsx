@@ -1,17 +1,17 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import CustomButton from "../custom-button/custom-button.component";
-import "./sign-in-option.styles.scss";
+import { OuterBox, Box } from "./sign-in-option.styles.jsx";
 import { connect } from "react-redux";
 import hideSignInOption from "../../redux/sign-in-option/sign-in-option.actions";
 import { RemoveButtonContainer } from "../check-out-cart-items/check-out-cart-items.styles";
 
 const SignInOption = ({ history, hideSignInOption }) => (
-  <div className="outer-box">
-    <RemoveButtonContainer className="cross" onClick={hideSignInOption}>
+  <OuterBox>
+    <RemoveButtonContainer onClick={hideSignInOption}>
       &#10005;
     </RemoveButtonContainer>
-    <div className="box">
+    <Box className="box">
       <CustomButton
         onClick={() => {
           return history.push("/signin"), hideSignInOption();
@@ -19,11 +19,9 @@ const SignInOption = ({ history, hideSignInOption }) => (
       >
         Sign In
       </CustomButton>
-      <CustomButton onClick={hideSignInOption}>
-        Continue as a guest
-      </CustomButton>
-    </div>
-  </div>
+      <CustomButton onClick={hideSignInOption}>I'm a guest</CustomButton>
+    </Box>
+  </OuterBox>
 );
 
 const mapDispatchToProps = (dispatch) => ({
